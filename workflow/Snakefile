@@ -1,0 +1,26 @@
+ALIGNMENT=config["alignment"]
+OUT_DIR=Path(config["out"])
+SNAKE_DIR = Path(workflow.basedir)
+TEMPLATES_DIR = SNAKE_DIR / "templates"
+SCRIPT_DIR = SNAKE_DIR / "scripts"
+
+print(config)
+
+include: "rules/BETS.smk"
+include: "rules/beast.smk"
+
+rule all:
+    input:
+        OUT_DIR / "BETS/BETS.png",
+        expand(OUT_DIR / "beast/{template}/logs/{template}.log", template=config['beast'].get('templates'))
+
+
+rule iqtree:
+    input:
+        fasta=ALIGNMENT,
+    output:
+        OUT_DIR / "iqtree/iqtree.treefile",
+    params:
+        outdir=OUT_DIR / "iqtree",
+    shell:
+        "iqtree -s {input.fasta} --prefix {params.outdir}/iqtree"

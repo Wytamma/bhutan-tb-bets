@@ -1,0 +1,14 @@
+logo: TB-Clocks
+annotations:
+  alignment:
+    required: true
+    type: Path
+    help: The alignment to run the analysis on
+  out:
+    type: Path
+    help: The output folder
+  beast:
+    constant_site_weights:
+      required: true
+      help: Count of constant sites e.g "1243080 1276344 1272356 1240032"
+      type: str

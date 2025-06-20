@@ -1,0 +1,36 @@
+alignment: ""
+out: "results"
+
+beast:
+  templates: 
+    - "EXP_COAL_UCLN"
+    - "EXP_COAL_STRICT"
+  chain_length: 500000000
+  constant_site_weights: null
+  threads: 4                      # Use up to this many threads
+  resources:                      # Only used for submission to an HPC queue
+    runtime: 10080 # 7 days          
+    mem_mb: 16G
+    partition: gpu-a100
+    gres: gpu:1
+  envmodules:
+    - "GCC/11.3.0"
+    - "beagle-lib/3.1.2-CUDA-11.7.0"
+
+BETS:
+  templates: 
+    - "strict_het"
+    - "strict_iso"
+    - "UCLN_het"
+    - "UCLN_iso"
+  particle_count: 1
+  subchain_length: 100000
+  threads: 4                      # Use up to this many threads
+  resources:                      # Only used for submission to an HPC queue
+    runtime: 10080          
+    mem_mb: 4G
+    partition: gpu-a100
+    gres: gpu:1
+  envmodules:
+    - "GCC/11.3.0"
+    - "beagle-lib/3.1.2-CUDA-11.7.0"

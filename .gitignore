@@ -1,0 +1,8 @@
+.snakemake
+.skygrid-env
+.venv
+results
+logs
+data
+jobs
+
