@@ -1,6 +1,6 @@
 # BETS analysis for Bhutan TB
 
-Run BETS analysis with strict and UCLN clock models and exponential population growth using nested sampling for Marginal Likelihood Estimation.
+Run (Bayesian Evaluation of Temporal Signal)[https://doi.org/10.1093/molbev/msaa163] (BETS) analysis with strict and UCLN clock models and exponential population growth using nested sampling for Marginal Likelihood Estimation.
 
 ## Set up
 
