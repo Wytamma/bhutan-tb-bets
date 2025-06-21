@@ -45,7 +45,7 @@ There was overlap in the BF CI so I increased the number of particles to 5
 bhutan-tb-bets run --alignment data/core_.95.aln --beast-constant-site-weights "123579424 236159820 235266551 123686338" soft_core_95_5/BETS/BETS.png --profile slurm --out soft_core_95_5 --bets-particle-count 5
 ```
 
-# Running bhutan + vietnam dataset
+## Running bhutan + vietnam dataset
 
 Added the Vietnam samples to the Bhutan dataset to attempt to increase the temporal signal.
 
@@ -61,13 +61,13 @@ sed -E 's/(>[A-Za-z0-9_]+\|[0-9]{4}-[0-9]{2})$/\1-15/' data/bhutan_vietnam.aln >
 bhutan-tb-bets run --alignment data/bhutan_vietnam_fixed_dates.aln --beast-constant-site-weights "721082 1374963 1370030 721829" bhutan_vietnam_fixed_dates/BETS/BETS.png --profile slurm --out bhutan_vietnam_fixed_dates --bets-particle-count 5
 ```
 
-Increased the subchain length to 50000.
+### Increased the subchain length to 50000.
 
 ```bash
 bhutan-tb-bets run --alignment data/bhutan_vietnam_fixed_dates.aln --beast-constant-site-weights "721082 1374963 1370030 721829" bhutan_vietnam_fixed_dates_constant_sites/BETS/BETS.png --profile slurm --out bhutan_vietnam_fixed_dates_50K --bets-particle-count 5 --bets-subchain-length 50000
 ```
 
-Longer sub-chain length to 100K
+### Longer sub-chain length to 100K
 
 ```bash
 bhutan-tb-bets run --alignment data/bhutan_vietnam_fixed_dates.aln --beast-constant-site-weights "721082 1374963 1370030 721829" bhutan_vietnam_fixed_dates_100K/BETS/BETS.png --profile slurm --out bhutan_vietnam_fixed_dates_100K --bets-particle-count 5 --bets-subchain-length 100000
